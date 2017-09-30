@@ -10,11 +10,13 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int x =digitalRead(pir_left);
-  Serial.println(x);
-  if (x==1){
+  if (digitalRead(pir_left)==HIGH){
+    Serial.println(digitalRead(pir_left));
     digitalWrite(led,HIGH);
+
   }else{
+    Serial.println(digitalRead(pir_left));
     digitalWrite(led,LOW);
     }
 }
+
