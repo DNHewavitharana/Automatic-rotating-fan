@@ -1,0 +1,230 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.dilshan.tabs_test.MainActivity$PlaceholderFragment">
+
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="147dp" />
+
+    <com.goodiebag.protractorview.ProtractorView
+        android:id="@+id/proview1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:angle="180"
+        app:angleTextSize="20sp"
+        app:arcColor="#4a4a4a"
+        app:arcProgressColor="#aa9fc8e4"
+        app:arcWidth="6dp"
+        app:progressWidth="4dp"
+        app:roundEdges="true"
+        app:textColor="#000"
+        app:textProgressColor="#ff0000"
+        app:tickColor="#4a4a4a"
+        app:tickIntervals="15"
+        app:tickLength="10dp"
+        app:tickOffset="18dp"
+        app:tickProgressColor="#ff0000"
+        app:ticksBetweenLabel="three"
+        app:touchInside="true"
+        android:layout_marginTop="250dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.goodiebag.protractorview.ProtractorView
+        android:id="@+id/proview2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:angle="0"
+        app:angleTextSize="20sp"
+        app:arcColor="#4a4a4a"
+        app:arcProgressColor="#aa9fc8e4"
+        app:arcWidth="6dp"
+        app:progressWidth="4dp"
+        app:roundEdges="true"
+        app:textColor="#000"
+        app:textProgressColor="#ff0000"
+        app:tickColor="#4a4a4a"
+        app:tickIntervals="15"
+        app:tickLength="10dp"
+        app:tickOffset="18dp"
+        app:tickProgressColor="#ff0000"
+        app:ticksBetweenLabel="three"
+        app:touchInside="true"
+        android:layout_marginTop="150dp" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed set to"
+        android:paddingTop="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#195497"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_alignRight="@+id/section_label"
+        android:layout_alignEnd="@+id/section_label"
+        android:layout_below="@+id/speedradio2" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select a speed"
+        android:textSize="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fan fixed between"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#195497"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/speedradio2"
+        android:orientation="horizontal"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:id="@+id/high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/high"
+            android:textSize="15dp"
+            android:textColor="#195497"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Medium"
+            android:textSize="15dp"
+            android:textColor="#195497"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/low"
+            android:textSize="15dp"
+            android:textColor="#195497"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Off"
+            android:textSize="15dp"
+            android:textColor="#195497"
+            android:textStyle="bold"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/startangle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0°"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/section_label" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" and "
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/endangle"
+        android:layout_alignBottom="@+id/endangle"
+        android:layout_toRightOf="@+id/setbtn1"
+        android:layout_toEndOf="@+id/setbtn1" />
+
+    <TextView
+        android:id="@+id/endangle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="180°"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/proview2"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="59dp" />
+
+    <TextView
+        android:id="@+id/speed2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_toEndOf="@+id/section_label"
+        android:layout_toRightOf="@+id/section_label"
+        android:text=""
+        android:paddingTop="10dp"
+        android:textColor="#ff0000"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignTop="@+id/proview2"
+        android:text="Select range"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+    <Button
+        android:id="@+id/setbtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="setBtn1Clicked"
+        android:text="Set Fan"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

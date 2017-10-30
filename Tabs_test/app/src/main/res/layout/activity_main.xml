@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/fanback"
+    tools:context="com.example.dilshan.tabs_test.MainActivity" >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <TextView
+            android:id="@+id/section_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="  Manual Mode"
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000066"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="26dp"
+        android:onClick="changeFanState"/>
+
+
+    <Button
+        android:textColor="#FFFFFFFF"
+        android:textSize="20sp"
+        android:background="@drawable/custom_button"
+        android:shadowColor="#f2595151"
+        android:shadowDx="5"
+        android:shadowDy="0"
+        android:shadowRadius="10"
+        android:id="@+id/button2"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Set to Automatic"
+        android:layout_alignBaseline="@+id/manual_btn"
+        android:layout_alignBottom="@+id/manual_btn"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:onClick="manualToAuto"/>
+
+
+
+</RelativeLayout>

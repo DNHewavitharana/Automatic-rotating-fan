@@ -1,0 +1,192 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+tools:context="com.example.dilshan.tabs_test.MainActivity$PlaceholderFragment"
+android:id="@+id/mainLayout">
+
+<TextView
+    android:id="@+id/section_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="147dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/section_label"
+        android:id="@+id/relativeLayout">
+
+        <com.goodiebag.protractorview.ProtractorView
+            android:id="@+id/proview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:angle="90"
+            app:angleTextSize="20sp"
+            app:arcColor="#4a4a4a"
+            app:arcProgressColor="#aa9fc8e4"
+            app:arcWidth="6dp"
+            app:progressWidth="4dp"
+            app:roundEdges="true"
+            app:textColor="#000"
+            app:textProgressColor="#ff0000"
+            app:tickColor="#4a4a4a"
+            app:tickIntervals="15"
+            app:tickLength="10dp"
+            app:tickOffset="18dp"
+            app:tickProgressColor="#ff0000"
+            app:ticksBetweenLabel="three"
+            app:touchInside="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="71dp"
+            android:text="Speed set to"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#195497"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/setbtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView3"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/textView3"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_marginBottom="12dp"
+            android:onClick="setBtn1Clicked"
+            android:text="Set Fan" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/relativeLayout"
+        android:text="Select an angle to fix the fan"
+        android:textSize="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fan_fixed_at"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#195497"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="117dp"
+        android:layout_alignBottom="@+id/speed"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/angle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="235dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:text="@string/_90"
+        android:textSize="20dp"
+        android:textColor="#ff0000"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/angle"
+        android:layout_marginTop="20dp"
+        android:text="Select a speed"
+        android:textSize="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/speedradio"
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="2dp" >
+
+        <RadioButton
+            android:id="@+id/high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/high"
+            android:textSize="15dp"
+            android:textColor="#195497"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Medium"
+            android:textSize="15dp"
+            android:textColor="#195497"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/low"
+            android:textSize="15dp"
+            android:textColor="#195497"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Off"
+            android:textSize="15dp"
+            android:textColor="#195497"
+            android:textStyle="bold"/>
+    </RadioGroup>
+    <TextView
+        android:id="@+id/speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:textColor="#ff0000"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:layout_alignLeft="@+id/angle"
+        android:layout_alignStart="@+id/angle" />
+
+</RelativeLayout>

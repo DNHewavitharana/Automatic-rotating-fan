@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/fanback"
+tools:context="com.example.dilshan.tabs_test.AutoActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+<include layout="@layout/content_first_page" />
+
+<TextView
+    android:id="@+id/section_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:text="  Automatic Mode"
+    android:textColor="#ffffff"
+    android:textSize="24dp"
+    android:layout_marginTop="@dimen/activity_horizontal_margin"
+    />
+
+<Switch
+    android:id="@+id/switch1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="24dp"
+    android:layout_marginEnd="24dp"
+    android:layout_alignTop="@+id/section_label"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:onClick="changeFanState"/>
+
+
+<Button
+    android:textColor="#FFFFFFFF"
+    android:textSize="20sp"
+    android:background="@drawable/custom_button"
+    android:shadowColor="#f2595151"
+    android:shadowDx="5"
+    android:shadowDy="0"
+    android:shadowRadius="10"
+    android:id="@+id/manual_btn"
+    android:layout_width="130dp"
+    android:layout_height="wrap_content"
+    android:text="Set to Manual"
+    android:layout_marginTop="37dp"
+    android:layout_below="@+id/appBarLayout"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginLeft="32dp"
+    android:layout_marginStart="32dp"
+    android:onClick="autoToManual"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/areas"
+        android:adjustViewBounds="true"
+        android:maxWidth="200dp"
+        android:maxHeight="200dp"
+        android:scaleType="fitCenter"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/checkBox"
+        android:paddingBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set range 1 speed"
+        android:textSize="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/checkBox2"
+        android:layout_alignEnd="@+id/checkBox2"
+        android:layout_below="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/checkBox2"
+        android:paddingBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox"
+        android:text="Set range 2 speed"
+        android:textSize="20dp"
+        android:layout_alignRight="@+id/section_label"
+        android:layout_alignEnd="@+id/section_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/checkBox3"
+        android:paddingBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox2"
+        android:text="Set range 3 speed"
+        android:textSize="20dp"
+        />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/checkBox"
+        android:layout_toRightOf="@+id/checkBox"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1"
+        android:layout_above="@+id/checkBox2" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBox3"
+        android:layout_alignLeft="@+id/spinner"
+        android:layout_alignStart="@+id/spinner"
+        android:layout_alignRight="@+id/spinner"
+        android:layout_alignEnd="@+id/spinner"
+        android:layout_below="@+id/spinner" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinner2"
+        android:layout_alignStart="@+id/spinner2"
+        android:layout_alignRight="@+id/spinner2"
+        android:layout_alignEnd="@+id/spinner2"
+        android:layout_below="@+id/spinner2" />
+
+    <Button
+        android:id="@+id/setbtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="setBtn1Clicked"
+        android:text="Set Fan"
+        android:layout_below="@+id/checkBox3"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

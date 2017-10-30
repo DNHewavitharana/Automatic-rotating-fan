@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Smart Fan Remote</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_firstpage">firstpage</string>
+    <string name="title_activity_first_page">FirstPage</string>
+    <string name="_90">90°</string>
+    <string name="fan_fixed_at">Fan fixed at</string>
+    <string name="high">High</string>
+    <string name="low">Low</string>
+    <string-array name="speeds">
+        <item>Off</item>
+        <item>Low</item>
+        <item>Middle</item>
+        <item>High</item>
+    </string-array>
+</resources>

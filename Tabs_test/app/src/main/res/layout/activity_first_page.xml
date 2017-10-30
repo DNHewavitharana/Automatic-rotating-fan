@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fanback"
+    tools:context="com.example.dilshan.tabs_test.firstmainpage">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_first_page" />
+
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="  Smart Fan Remote"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_alignTop="@+id/section_label"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="changeFanState"
+        />
+
+    <Button
+        android:textColor="#FFFFFFFF"
+        android:textSize="20sp"
+        android:background="@drawable/custom_button"
+        android:shadowColor="#f2595151"
+        android:shadowDx="5"
+        android:shadowDy="0"
+        android:shadowRadius="10"
+        android:id="@+id/auto_btn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Set to Automatic"
+        android:layout_alignBaseline="@+id/manual_btn"
+        android:layout_alignBottom="@+id/manual_btn"
+        android:layout_toLeftOf="@+id/manual_btn"
+        android:layout_toStartOf="@+id/manual_btn"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:onClick="goToAuto"/>
+
+    <Button
+        android:textColor="#FFFFFFFF"
+        android:textSize="20sp"
+        android:background="@drawable/custom_button"
+        android:shadowColor="#f2595151"
+        android:shadowDx="5"
+        android:shadowDy="0"
+        android:shadowRadius="10"
+        android:id="@+id/manual_btn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Set to Manual"
+        android:layout_marginTop="101dp"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1"
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp"
+        android:onClick="goToManual"/>
+
+
+</RelativeLayout>
