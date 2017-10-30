@@ -27,11 +27,14 @@ public class tab2chat extends Fragment {
         ProtractorView protractorView2 = (ProtractorView) rootView.findViewById(R.id.proview2);
         RadioGroup rg = (RadioGroup) rootView.findViewById(R.id.speedradio2);
 
+
         protractorView2.setOnProtractorViewChangeListener(new ProtractorView.OnProtractorViewChangeListener() {
             @Override
             public void onProgressChanged(ProtractorView pv, int progress, boolean b) {
+                firstmainpage.getArray()[2]="FIXEDTORANGE";
                 TextView startangle = (TextView) rootView.findViewById(R.id.startangle);
                 startangle.setText(String.valueOf(progress)+"°");
+                firstmainpage.getArray()[3]=String.valueOf(progress);
             }
 
             @Override
@@ -50,6 +53,7 @@ public class tab2chat extends Fragment {
             public void onProgressChanged(ProtractorView pv, int progress, boolean b) {
                 TextView endangle = (TextView) rootView.findViewById(R.id.endangle);
                 endangle.setText(String.valueOf(progress)+"°");
+                firstmainpage.getArray()[4]=String.valueOf(progress);
             }
 
             @Override
@@ -70,15 +74,19 @@ public class tab2chat extends Fragment {
                 switch(checkedId) {
                     case R.id.high:
                         speed2.setText("High");
+                        firstmainpage.getArray()[5]="HIGH";
                         break;
                     case R.id.medium:
                         speed2.setText("Medium");
+                        firstmainpage.getArray()[5]="MEDIUM";
                         break;
                     case R.id.low:
                         speed2.setText("Low");
+                        firstmainpage.getArray()[5]="LOW";
                         break;
                     case R.id.off:
                         speed2.setText("Off");
+                        firstmainpage.getArray()[5]="OFF";
                         break;
                 }
             }

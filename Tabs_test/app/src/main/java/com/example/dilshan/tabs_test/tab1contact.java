@@ -34,11 +34,14 @@ public class tab1contact extends Fragment {
         ProtractorView protractorView = (ProtractorView) rootView.findViewById(R.id.proview);
         RadioGroup rg = (RadioGroup) rootView.findViewById(R.id.speedradio);
 
+
         protractorView.setOnProtractorViewChangeListener(new ProtractorView.OnProtractorViewChangeListener() {
             @Override
             public void onProgressChanged(ProtractorView pv, int progress, boolean b) {
+                firstmainpage.getArray()[2]="FIXED";
                 TextView angle = (TextView) rootView.findViewById(R.id.angle);
                 angle.setText(String.valueOf(progress)+"°");
+                firstmainpage.getArray()[3]=String.valueOf(progress);
             }
 
             @Override
@@ -59,15 +62,19 @@ public class tab1contact extends Fragment {
                 switch(checkedId) {
                     case R.id.high:
                         speed.setText("High");
+                        firstmainpage.getArray()[5]="HIGH";
                         break;
                     case R.id.medium:
                         speed.setText("Medium");
+                        firstmainpage.getArray()[5]="MEDIUM";
                         break;
                     case R.id.low:
                         speed.setText("Low");
+                        firstmainpage.getArray()[5]="LOW";
                         break;
                     case R.id.off:
                         speed.setText("Off");
+                        firstmainpage.getArray()[5]="OFF";
                         break;
                 }
             }

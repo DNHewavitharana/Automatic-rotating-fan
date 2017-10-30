@@ -1,5 +1,9 @@
 package com.example.dilshan.tabs_test;
 
+import java.io.OutputStream;
+import java.util.Arrays;
+import java.util.UUID;
+
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -23,14 +27,29 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
 
 import com.goodiebag.protractorview.ProtractorView;
+
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.UUID;
 
 
 public class MainActivity extends AppCompatActivity {
 
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    //public String[] dataArray;
+    private static final int REQUEST_ENABLE_BT = 1;
+    private BluetoothAdapter btAdapter = null;
+    private BluetoothSocket btSocket = null;
+    private OutputStream outStream = null;
+
+    private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+    // private static String address = "00:00:00:00:00:00";
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -54,20 +73,32 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-
+        //dataArray = new String[]{"ON", "NORMAL", "FIXED", "30", "120", "HIGH", "HIGH", "HIGH", "HIGH"};
     }
+
+
 
     public void manualToAuto(View view) {
         Intent i = new Intent(this, AutoActivity.class);
+        firstmainpage.getArray()[1]="AUTO";
         startActivity(i);
+        System.out.println("manualToAuto"+ Arrays.toString(firstmainpage.getArray()));
     }
 
     public void setBtn1Clicked(View view){
+        firstmainpage.sendData();
         Toast.makeText(getBaseContext(),"Fan state changed",Toast.LENGTH_LONG).show();
+        System.out.println("setFan"+ Arrays.toString(firstmainpage.getArray()));
     }
      public void changeFanState(View view){
+         if (firstmainpage.getArray()[0]=="ON"){
+             firstmainpage.getArray()[0]="OFF";
+         }else{
+             firstmainpage.getArray()[0]="ON";
+         }
+         firstmainpage.sendData();
          Toast.makeText(getBaseContext(),"Fan state changed",Toast.LENGTH_LONG).show();
+         System.out.println("OnOff"+ Arrays.toString(firstmainpage.getArray()));
      }
 
     @Override
