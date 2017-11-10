@@ -30,6 +30,10 @@ void fan_rotator_forward(int angle_start, int angle_end, int speed_motor){
   while (x<=angle_end && input_availability){
     if (Serial.available()){
       read_input();
+<<<<<<< HEAD
+=======
+      inputSetter();
+>>>>>>> refs/remotes/origin/master
       constant_change_checker();
     }
     motor_speed_controller(speed_motor);
@@ -44,6 +48,10 @@ void fan_rotator_backward(int angle_end, int angle_start,int speed_motor){
     while (x>=angle_start && input_availability ){
       if (Serial.available()){
         read_input();
+<<<<<<< HEAD
+=======
+        inputSetter();
+>>>>>>> refs/remotes/origin/master
         constant_change_checker();
       }
       motor_speed_controller(speed_motor);
@@ -58,6 +66,10 @@ void motor_drive_first_section_forward(Servo motor_control,bool speed_turn, int 
   while (a<=60 && input_availability){
     if (Serial.available()){
         read_input();
+<<<<<<< HEAD
+=======
+        inputSetter();
+>>>>>>> refs/remotes/origin/master
         constant_change_checker();
       }
       motor_speed_controller(speed_motor);
@@ -72,6 +84,10 @@ void motor_drive_second_section_forward(Servo motor_control,bool speed_turn, int
     while (b<=120 && input_availability){
        if (Serial.available()){
         read_input();
+<<<<<<< HEAD
+=======
+        inputSetter();
+>>>>>>> refs/remotes/origin/master
         constant_change_checker();
       }
        motor_speed_controller(speed_motor);
@@ -86,6 +102,10 @@ void motor_drive_third_section_forward(Servo motor_control,bool speed_turn, int 
     while (c<=180 && input_availability){
        if (Serial.available()){
         read_input();
+<<<<<<< HEAD
+=======
+        inputSetter();
+>>>>>>> refs/remotes/origin/master
         constant_change_checker();
       }
       motor_speed_controller(speed_motor);
@@ -99,6 +119,10 @@ void motor_drive_third_section_backward(Servo motor_control,bool speed_turn, int
     while (j>=120 && input_availability){
       if (Serial.available()){
         read_input();
+<<<<<<< HEAD
+=======
+        inputSetter();
+>>>>>>> refs/remotes/origin/master
         constant_change_checker();
       }
       motor_speed_controller(speed_motor);
@@ -113,6 +137,10 @@ void motor_drive_second_section_backward(Servo motor_control,bool speed_turn, in
     while (j>=60 && input_availability){
       if (Serial.available()){
         read_input();
+<<<<<<< HEAD
+=======
+        inputSetter();
+>>>>>>> refs/remotes/origin/master
         constant_change_checker();
       }
       motor_speed_controller(speed_motor);
@@ -127,6 +155,10 @@ void motor_drive_first_section_backward(Servo motor_control,bool speed_turn, int
     while (j>0 && input_availability){
       if (Serial.available()){
         read_input();
+<<<<<<< HEAD
+=======
+        inputSetter();
+>>>>>>> refs/remotes/origin/master
         constant_change_checker();
       }
       motor_speed_controller(speed_motor);
@@ -137,4 +169,8 @@ void motor_drive_first_section_backward(Servo motor_control,bool speed_turn, int
   }
    
 
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> refs/remotes/origin/master

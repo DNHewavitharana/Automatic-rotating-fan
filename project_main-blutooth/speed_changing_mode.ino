@@ -12,4 +12,8 @@ void speed_changing_mode(){
       motor_drive_first_section_backward(motor_control,speed_turn,left_fan_speed); 
       delay(200);
     
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> refs/remotes/origin/master

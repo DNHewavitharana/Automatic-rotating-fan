@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  #include <Servo.h>
+=======
+#include <Servo.h>
+>>>>>>> refs/remotes/origin/master
 Servo motor_control;
                  
 bool speed_turn = true;
@@ -7,7 +11,11 @@ int motor_control_pin= 9;
 int pir_left= 10;
 int pir_middle= 11;
 int pir_right= 12;
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> refs/remotes/origin/master
 int fan_speed_control_pin= 6;
 
 int pir_person_detector=7;
@@ -37,7 +45,11 @@ int fixed_speed_motor;
 
 bool input_availability=true;
 
+<<<<<<< HEAD
 
+=======
+String val="0000000000000";
+>>>>>>> refs/remotes/origin/master
 boolean fan_state;
 String fan_mode;
 String mode_state;
@@ -45,8 +57,11 @@ String mode_state;
 boolean current_fan_state;
 String current_fan_mode;
 String current_mode_state;
+<<<<<<< HEAD
 String val;
 int input_collector[13]={0,0,0,0,0,0,0,0,0,0,0,0,0};
+=======
+>>>>>>> refs/remotes/origin/master
 
 void setup() {
   Serial.begin(9600);
@@ -58,6 +73,7 @@ void setup() {
   motor_control.attach(motor_control_pin);
 }
 
+<<<<<<< HEAD
 
 int begin_loop=0;
 void loop(){
@@ -78,13 +94,63 @@ void loop(){
     
   if (Serial.available()){
     read_input();
+=======
+void inputSetter(){
+  if (val[0]== 0){
+    fan_state=false;
+    }else{
+      fan_state=true;
+    }
+  if (val[1]== 1){
+    fan_mode="Manual";
+    }else if (val[1]== 2){
+      fan_mode="Auto";
+    }
+  if (val[1]== 1 && val[2]== 0){
+     mode_state="fixed_angle";
+    }
+  else if (val[1]== 1 && val[2]== 1){
+      mode_state="fixed_range";
+      }
+  else if (val[1]== 1 && val[2]== 2){
+      mode_state="speed_changing";
+      }
+  else if (val[1]== 2 && val[2]== 0){
+      mode_state="Automatic_normal";
+      }
+  fixed_angle_start = val[3] + val[4] + val[5];
+  fixed_angle_end = val[6] + val[7] + val[8];
+  if (val[9]==0){
+    speed_motor= 0;
+  }else if (val[9]==1){
+    speed_motor= low_speed;
+  }else if (val[9]==2){
+    speed_motor= medium_speed;
+  }else if (val[9]==3){
+    speed_motor= high_speed;
+  }
+  left_fan_speed = val[10];
+  middle_fan_speed = val[11];
+  right_fan_speed = val[12];
+}
+
+void loop(){
+  inputSetter();
+  if (Serial.available()){
+      read_input();
+      inputSetter();
+>>>>>>> refs/remotes/origin/master
     }
   current_fan_state=fan_state;
   current_fan_mode=fan_mode;
   current_mode_state= mode_state;
+<<<<<<< HEAD
 
   
   if (fan_state== 1){
+=======
+  if (fan_state= true){
+>>>>>>> refs/remotes/origin/master
     if (fan_mode=="Manual" && mode_state=="fixed_angle"){
       angle_fixed_mode(fixed_angle_start);
       }
@@ -97,15 +163,20 @@ void loop(){
      else if (fan_mode=="Auto" && mode_state=="Automatic_normal"){
       automatic_normal_mode(motor_control);
       }
+<<<<<<< HEAD
     }else{
       motor_speed_controller(0);
       motor_control.write(90);
       fan_mode="0";
       }
+=======
+    }
+>>>>>>> refs/remotes/origin/master
     input_availability=true;
   }
 
 void read_input(){
+<<<<<<< HEAD
   int count=0;
   while (count<13){
     val = ((byte)Serial.read());
@@ -127,6 +198,10 @@ void read_input(){
   Serial.println(middle_fan_speed);
   Serial.println(right_fan_speed);
   
+=======
+  val=Serial.read();
+  Serial.println(val);
+>>>>>>> refs/remotes/origin/master
   }
 
 void constant_change_checker(){
@@ -134,6 +209,7 @@ void constant_change_checker(){
      input_availability=false;
     }
   }
+<<<<<<< HEAD
   
 
 void inputSetter(){
@@ -202,3 +278,7 @@ void inputSetter(){
 
 
 
+=======
+
+
+>>>>>>> refs/remotes/origin/master

@@ -30,4 +30,8 @@ void light(){
       }
   }
 
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> refs/remotes/origin/master

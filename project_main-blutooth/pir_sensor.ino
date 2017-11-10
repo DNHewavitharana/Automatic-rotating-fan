@@ -16,4 +16,8 @@ int pir_M(){
 int pir_person_detec(){
   return digitalRead(pir_person_detector);
 }
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> refs/remotes/origin/master
