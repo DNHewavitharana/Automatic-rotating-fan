@@ -42,8 +42,4 @@ void angle_calculator(){
 
 
 
-<<<<<<< HEAD
 
-=======
-
->>>>>>> refs/remotes/origin/master

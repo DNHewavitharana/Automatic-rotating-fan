@@ -52,8 +52,4 @@ void automatic_normal_mode(Servo motor_control) {
       motor_speed_controller(0);
       Serial.println("All sensor low"); 
       }
-<<<<<<< HEAD
   }
-=======
-  }
->>>>>>> refs/remotes/origin/master
